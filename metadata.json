@@ -1,0 +1,5 @@
+{
+  "name": "LocalLM Architect",
+  "description": "An intelligent platform powered by Gemini to recommend the best local AI models based on your hardware constraints and use cases.",
+  "requestFramePermissions": []
+}
