@@ -3,7 +3,7 @@ import { HardwareSpecs, UseCase } from './types';
 import { 
   MessageSquare, Code, Eye, Image, Video, Mic, 
   Database, Activity, Box, Type, Grid, Layers, 
-  Cpu, Globe, Scan, FileText
+  Cpu, Globe, Scan, FileText, FlaskConical
 } from 'lucide-react';
 
 export const DEFAULT_HARDWARE: HardwareSpecs = {
@@ -30,6 +30,22 @@ export const USE_CASE_GROUPS = [
     ]
   },
   {
+    category: "Science & Research",
+    icon: FlaskConical,
+    items: [
+      { id: UseCase.SCIENCE, label: 'General Science' },
+      { id: UseCase.PHYSICS, label: 'Physics' },
+      { id: UseCase.CHEMISTRY, label: 'Chemistry' },
+      { id: UseCase.BIOLOGY, label: 'Biology' },
+      { id: UseCase.PROTEIN_BIOLOGY, label: 'Protein Biology' },
+      { id: UseCase.MEDICINE, label: 'Medicine' },
+      { id: UseCase.GENOMICS, label: 'Genomics' },
+      { id: UseCase.ENVIRONMENTAL_SCIENCE, label: 'Environmental Science' },
+      { id: UseCase.MATHEMATICS, label: 'Mathematics' },
+      { id: UseCase.ASTRONOMY, label: 'Astronomy' },
+    ]
+  },
+  {
     category: "Computer Vision",
     icon: Eye,
     items: [
@@ -43,6 +59,8 @@ export const USE_CASE_GROUPS = [
       { id: UseCase.IMAGE_TO_VIDEO, label: 'Image-to-Video' },
       { id: UseCase.TEXT_TO_VIDEO, label: 'Text-to-Video' },
       { id: UseCase.TEXT_TO_3D, label: 'Text-to-3D' },
+      { id: UseCase.IMAGE_TO_3D, label: 'Image-to-3D' },
+      { id: UseCase.THREE_D_MODELING, label: '3D Modeling' },
       { id: UseCase.VIDEO_CLASSIFICATION, label: 'Video Classification' },
     ]
   },
@@ -81,4 +99,4 @@ export const USE_CASE_GROUPS = [
   }
 ];
 
-export const MOCK_RECOMMENDATIONS = []; 
+export const MOCK_RECOMMENDATIONS = [];

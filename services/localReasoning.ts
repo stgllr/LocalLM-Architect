@@ -5,13 +5,25 @@ import { HardwareSpecs, ModelRecommendation, RecommendationResponse, UseCase, Lo
 // Map specific granular UI UseCases to internal broad DB tags
 const TASK_MAPPING: Record<string, string[]> = {
   // Multimodal
-  [UseCase.AUDIO_TEXT_TO_TEXT]: ['audio', 'chat'],
+  [UseCase.AUDIO_TEXT_TO_TEXT]: ['audio', 'chat', 'asr'],
   [UseCase.IMAGE_TEXT_TO_TEXT]: ['vision', 'ocr'],
   [UseCase.VISUAL_QUESTION_ANSWERING]: ['vision', 'qa', 'chat'],
   [UseCase.DOCUMENT_QUESTION_ANSWERING]: ['ocr', 'qa', 'vision'],
   [UseCase.VIDEO_TEXT_TO_TEXT]: ['vision', 'video-analysis'],
   [UseCase.VISUAL_DOCUMENT_RETRIEVAL]: ['ocr', 'vision'],
   [UseCase.ANY_TO_ANY]: ['multimodal', 'vision', 'audio'],
+
+  // Scientific
+  [UseCase.SCIENCE]: ['science', 'research', 'reasoning'],
+  [UseCase.PHYSICS]: ['physics', 'science', 'research'],
+  [UseCase.CHEMISTRY]: ['chemistry', 'science', 'research'],
+  [UseCase.BIOLOGY]: ['biology', 'medicine', 'science'],
+  [UseCase.PROTEIN_BIOLOGY]: ['protein', 'biology', 'science'],
+  [UseCase.MEDICINE]: ['medicine', 'biology', 'science'],
+  [UseCase.GENOMICS]: ['genomics', 'biology', 'science'],
+  [UseCase.ENVIRONMENTAL_SCIENCE]: ['environmental-science', 'research'],
+  [UseCase.MATHEMATICS]: ['math', 'reasoning', 'formula'],
+  [UseCase.ASTRONOMY]: ['science', 'physics', 'research'],
 
   // Computer Vision
   [UseCase.DEPTH_ESTIMATION]: ['vision'],
@@ -26,8 +38,9 @@ const TASK_MAPPING: Record<string, string[]> = {
   [UseCase.UNCONDITIONAL_IMAGE_GEN]: ['text-to-image'],
   [UseCase.VIDEO_CLASSIFICATION]: ['vision', 'video-analysis'],
   [UseCase.ZERO_SHOT_IMAGE_CLASSIFICATION]: ['vision'],
-  [UseCase.TEXT_TO_3D]: ['vision'], // Approximation
-  [UseCase.IMAGE_TO_3D]: ['vision'],
+  [UseCase.TEXT_TO_3D]: ['vision', 'text-to-3d', '3d'],
+  [UseCase.IMAGE_TO_3D]: ['vision', 'image-to-3d', '3d'],
+  [UseCase.THREE_D_MODELING]: ['3d', 'vision', 'text-to-3d', 'image-to-3d'],
 
   // NLP
   [UseCase.TEXT_CLASSIFICATION]: ['chat', 'reasoning'],
@@ -35,7 +48,7 @@ const TASK_MAPPING: Record<string, string[]> = {
   [UseCase.TABLE_QUESTION_ANSWERING]: ['qa', 'reasoning'],
   [UseCase.QUESTION_ANSWERING]: ['qa', 'chat'],
   [UseCase.ZERO_SHOT_CLASSIFICATION]: ['chat', 'reasoning'],
-  [UseCase.TRANSLATION]: ['chat', 'multilingual'],
+  [UseCase.TRANSLATION]: ['translation', 'multilingual', 'chat'],
   [UseCase.SUMMARIZATION]: ['chat', 'reasoning'],
   [UseCase.FEATURE_EXTRACTION]: ['chat'],
   [UseCase.TEXT_GENERATION]: ['chat', 'creative'],
@@ -44,11 +57,11 @@ const TASK_MAPPING: Record<string, string[]> = {
   [UseCase.TEXT_RANKING]: ['chat'],
 
   // Audio
-  [UseCase.TEXT_TO_SPEECH]: ['audio', 'text-to-speech'],
-  [UseCase.TEXT_TO_AUDIO]: ['audio'],
-  [UseCase.AUTOMATIC_SPEECH_RECOGNITION]: ['audio'],
-  [UseCase.AUDIO_TO_AUDIO]: ['audio'],
-  [UseCase.AUDIO_CLASSIFICATION]: ['audio'],
+  [UseCase.TEXT_TO_SPEECH]: ['audio', 'text-to-speech', 'tts'],
+  [UseCase.TEXT_TO_AUDIO]: ['audio', 'text-to-audio', 'tts'],
+  [UseCase.AUTOMATIC_SPEECH_RECOGNITION]: ['audio', 'asr', 'transcription'],
+  [UseCase.AUDIO_TO_AUDIO]: ['audio', 'audio-to-audio'],
+  [UseCase.AUDIO_CLASSIFICATION]: ['audio', 'audio-classification', 'classification'],
   
   // Other
   [UseCase.TABULAR_CLASSIFICATION]: ['coding', 'reasoning'],

@@ -35,6 +35,7 @@ export enum UseCase {
   ZERO_SHOT_OBJECT_DETECTION = 'Zero-Shot Object Detection',
   TEXT_TO_3D = 'Text-to-3D',
   IMAGE_TO_3D = 'Image-to-3D',
+  THREE_D_MODELING = '3D Modeling',
   IMAGE_FEATURE_EXTRACTION = 'Image Feature Extraction',
   KEYPOINT_DETECTION = 'Keypoint Detection',
   VIDEO_TO_VIDEO = 'Video-to-Video',
@@ -72,6 +73,18 @@ export enum UseCase {
 
   // Other
   GRAPH_MACHINE_LEARNING = 'Graph Machine Learning',
+
+  // Scientific
+  SCIENCE = 'Science',
+  PHYSICS = 'Physics',
+  CHEMISTRY = 'Chemistry',
+  BIOLOGY = 'Biology',
+  MEDICINE = 'Medicine',
+  PROTEIN_BIOLOGY = 'Protein Biology',
+  GENOMICS = 'Genomics',
+  ENVIRONMENTAL_SCIENCE = 'Environmental Science',
+  MATHEMATICS = 'Mathematics',
+  ASTRONOMY = 'Astronomy',
 }
 
 export interface ModelRecommendation {
