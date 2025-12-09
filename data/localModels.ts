@@ -25,6 +25,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "A BERT model trained on scientific text. Excellent for classification and embedding of research papers.",
     publisher: "AllenAI",
     provider: "AllenAI",
+    quality: "Excellent",
     libraries: ["Transformers", "ONNX"],
     providers: ["HuggingFace"]
   },
@@ -50,6 +51,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "GPT-2 model fine-tuned on scientific papers for text generation, capturing scientific discourse patterns.",
     publisher: "Feradauto",
     provider: "Feradauto",
+    quality: "Good",
     libraries: ["Transformers", "PyTorch"],
     providers: ["HuggingFace"]
   },
@@ -75,6 +77,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Extreme summarization of scientific documents (TLDR). Generates concise summaries of papers.",
     publisher: "NeuLab",
     provider: "NeuLab",
+    quality: "Very Good",
     libraries: ["Transformers", "PyTorch"],
     providers: ["HuggingFace"]
   },
@@ -100,6 +103,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Detecting and contextualizing scientific claims for assisting manual fact-checking.",
     publisher: "BIT-ML",
     provider: "BIT-ML",
+    quality: "Good",
     libraries: ["Transformers", "PyTorch"],
     providers: ["HuggingFace"]
   },
@@ -125,31 +129,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Large masked language model for science, trained on a massive corpus of 75M+ articles.",
     publisher: "Globus Labs",
     provider: "Globus Labs",
-    libraries: ["Transformers", "PyTorch"],
-    providers: ["HuggingFace"]
-  },
-  {
-    name: "AcademicRoBERTa",
-    repo: "eh-lab/AcademicRoBERTa",
-    params_b: 0.12,
-    type: "Embedding",
-    license: "CC-BY-4.0",
-    formats: ["Transformers"],
-    backend: "pytorch",
-    quantization: "FP32",
-    apple_silicon_optimized: false,
-    min_hardware: {
-      cpu: "x86/ARM",
-      ram_gb: 4,
-      gpu_vram_gb: 1
-    },
-    tasks: ["science", "research", "classification"],
-    pinokio: false,
-    text_to_video_prompt: false,
-    text_to_image_prompt: false,
-    description: "A Japanese/English Masked Language Model optimized for the Academic Domain.",
-    publisher: "EH Lab",
-    provider: "EH Lab",
+    quality: "Excellent",
     libraries: ["Transformers", "PyTorch"],
     providers: ["HuggingFace"]
   },
@@ -175,108 +155,9 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Meta's scientific model. Good for LaTeX generation, scientific referencing, and formula creation.",
     publisher: "Meta",
     provider: "Meta",
+    quality: "Very Good",
     libraries: ["GGUF", "llama.cpp"],
     providers: []
-  },
-  {
-    name: "DARWIN-7B",
-    repo: "migtissera/Darwin-7B-v1",
-    params_b: 7,
-    type: "LLM",
-    license: "Apache 2.0",
-    formats: ["GGUF"],
-    backend: "gguf",
-    quantization: "Q4_K_M",
-    apple_silicon_optimized: false,
-    min_hardware: {
-      cpu: "x86/ARM",
-      ram_gb: 8,
-      gpu_vram_gb: 6
-    },
-    tasks: ["biology", "evolution", "science"],
-    pinokio: true,
-    text_to_video_prompt: false,
-    text_to_image_prompt: false,
-    description: "Experimental model focused on evolutionary biology and natural sciences.",
-    publisher: "Migel Tissera",
-    provider: "Migel Tissera",
-    libraries: ["GGUF", "llama.cpp"],
-    providers: []
-  },
-  {
-    name: "FORGE-1.4B",
-    repo: "LLNL/FORGE-1.4B",
-    params_b: 1.4,
-    type: "LLM",
-    license: "MIT",
-    formats: ["Transformers"],
-    backend: "pytorch",
-    quantization: "FP16",
-    apple_silicon_optimized: false,
-    min_hardware: {
-      cpu: "x86/ARM",
-      ram_gb: 8,
-      gpu_vram_gb: 4
-    },
-    tasks: ["science", "research", "physics", "chemistry"],
-    pinokio: false,
-    text_to_video_prompt: false,
-    text_to_image_prompt: false,
-    description: "Pre-training Open Foundation Models for Science (General, Biology, Chemistry, Physics variants).",
-    publisher: "LLNL",
-    provider: "LLNL",
-    libraries: ["Transformers", "PyTorch"],
-    providers: ["HuggingFace"]
-  },
-  {
-    name: "SciGLM-6B",
-    repo: "Tsinghua/SciGLM-6B",
-    params_b: 6,
-    type: "LLM",
-    license: "Apache 2.0",
-    formats: ["Transformers"],
-    backend: "pytorch",
-    quantization: "FP16",
-    apple_silicon_optimized: false,
-    min_hardware: {
-      cpu: "x86/ARM",
-      ram_gb: 16,
-      gpu_vram_gb: 8
-    },
-    tasks: ["science", "research", "chat"],
-    pinokio: false,
-    text_to_video_prompt: false,
-    text_to_image_prompt: false,
-    description: "Self-Reflective Instruction Annotated Dataset for Training Scientific Language Models.",
-    publisher: "Tsinghua University",
-    provider: "Tsinghua",
-    libraries: ["Transformers", "PyTorch"],
-    providers: ["HuggingFace"]
-  },
-  {
-    name: "INDUS-125M",
-    repo: "NASA-INDUS/INDUS-125M",
-    params_b: 0.125,
-    type: "Embedding",
-    license: "Apache 2.0",
-    formats: ["Transformers"],
-    backend: "pytorch",
-    quantization: "FP32",
-    apple_silicon_optimized: false,
-    min_hardware: {
-      cpu: "x86/ARM",
-      ram_gb: 4,
-      gpu_vram_gb: 1
-    },
-    tasks: ["environmental-science", "research", "earth-science"],
-    pinokio: false,
-    text_to_video_prompt: false,
-    text_to_image_prompt: false,
-    description: "Effective and Efficient Language Models for Scientific Applications (Earth Science focus).",
-    publisher: "NASA",
-    provider: "NASA",
-    libraries: ["Transformers", "PyTorch"],
-    providers: ["HuggingFace"]
   },
   {
     name: "SciDFM-18.2B",
@@ -300,6 +181,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "A Large Language Model with Mixture-of-Experts for Science.",
     publisher: "OpenDFM",
     provider: "OpenDFM",
+    quality: "Excellent",
     libraries: ["Transformers", "PyTorch"],
     providers: ["HuggingFace"]
   },
@@ -327,6 +209,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Highly efficient Llama 3.2 3B model optimized for Apple Silicon via MLX. Blazing fast inference on M1/M2/M3.",
     publisher: "Meta / MLX Community",
     provider: "Meta",
+    quality: "Very Good",
     libraries: ["MLX", "Safetensors", "Transformers"],
     providers: ["Groq", "Together AI", "Fireworks"]
   },
@@ -352,6 +235,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "State-of-the-art coding model (MoE) optimized for Mac. Rivals GPT-4 Turbo in coding tasks.",
     publisher: "DeepSeek / MLX Community",
     provider: "DeepSeek",
+    quality: "Exceptional",
     libraries: ["MLX", "Safetensors"],
     providers: ["DeepSeek", "Together AI"]
   },
@@ -377,6 +261,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Microsoft's Phi-3.5 Mini, perfectly optimized for Apple Silicon. Exceptional reasoning for its size.",
     publisher: "Microsoft / MLX Community",
     provider: "Microsoft",
+    quality: "Excellent",
     libraries: ["MLX", "Transformers"],
     providers: ["Azure AI", "HuggingFace"]
   },
@@ -402,6 +287,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Mistral Nemo 12B running natively on MLX. Large context window and strong general performance.",
     publisher: "Mistral AI / MLX Community",
     provider: "Mistral AI",
+    quality: "Excellent",
     libraries: ["MLX", "Transformers"],
     providers: ["Mistral AI", "Together AI", "Groq"]
   },
@@ -429,6 +315,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Ultra-efficient distilled reasoning model. Incredible performance for its size on logic/math.",
     publisher: "DeepSeek",
     provider: "DeepSeek",
+    quality: "Very Good",
     libraries: ["GGUF", "llama.cpp", "MLX"],
     providers: ["DeepSeek"]
   },
@@ -454,6 +341,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "The sweet spot for local reasoning. Outperforms many larger models on complex tasks.",
     publisher: "DeepSeek",
     provider: "DeepSeek",
+    quality: "Exceptional",
     libraries: ["GGUF", "llama.cpp", "MLX"],
     providers: ["DeepSeek"]
   },
@@ -479,6 +367,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Massive reasoning capability distilled from DeepSeek-V3 into Llama 70B architecture. Enterprise grade.",
     publisher: "DeepSeek",
     provider: "DeepSeek",
+    quality: "Exceptional",
     libraries: ["GGUF", "llama.cpp", "vLLM"],
     providers: ["DeepSeek", "Groq"]
   },
@@ -506,6 +395,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "The 'Golden Ratio' model. Fits on 24GB GPUs (3090/4090) with Q4 quantization. Beats Llama 3 70B in many benchmarks.",
     publisher: "Qwen",
     provider: "Alibaba Cloud",
+    quality: "Excellent",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Alibaba Cloud"]
   },
@@ -531,6 +421,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "State-of-the-art open code model. Rivals GPT-4o in coding tasks.",
     publisher: "Qwen",
     provider: "Alibaba Cloud",
+    quality: "Exceptional",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Alibaba Cloud"]
   },
@@ -556,6 +447,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Qwen's answer to OpenAI o1. Specialized in long-chain-of-thought reasoning.",
     publisher: "Qwen",
     provider: "Alibaba Cloud",
+    quality: "Excellent",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Alibaba Cloud"]
   },
@@ -581,6 +473,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Highly capable small vision-language model. Can handle high-res images and video understanding.",
     publisher: "Qwen",
     provider: "Alibaba Cloud",
+    quality: "Very Good",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Alibaba Cloud"]
   },
@@ -608,6 +501,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "The refined 70B model from Meta. Excellent general purpose capabilities.",
     publisher: "Meta",
     provider: "Meta",
+    quality: "Exceptional",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Groq", "Together AI"]
   },
@@ -633,6 +527,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Meta's mid-sized vision model. Good balance of text and image reasoning.",
     publisher: "Meta",
     provider: "Meta",
+    quality: "Excellent",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Groq"]
   },
@@ -660,6 +555,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Microsoft's latest reasoning model trained on synthetic data. Punches way above its weight.",
     publisher: "Microsoft",
     provider: "Microsoft",
+    quality: "Very Good",
     libraries: ["GGUF", "llama.cpp", "ONNX"],
     providers: ["Azure AI"]
   },
@@ -687,6 +583,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Mistral's powerful edge model. Designed for low-latency and on-device use.",
     publisher: "Mistral AI",
     provider: "Mistral AI",
+    quality: "Good",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Mistral AI"]
   },
@@ -712,6 +609,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Mistral's first multimodal model. Built on Nemo 12B with a 400M vision adapter.",
     publisher: "Mistral AI",
     provider: "Mistral AI",
+    quality: "Excellent",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Mistral AI"]
   },
@@ -739,6 +637,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "Google's open model with exceptional performance for its size class.",
     publisher: "Google",
     provider: "Google",
+    quality: "Very Good",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Google Cloud"]
   },
@@ -764,6 +663,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "A robust mid-sized model from Google, comparable to Llama 3 70B in many aspects.",
     publisher: "Google",
     provider: "Google",
+    quality: "Excellent",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Google Cloud"]
   },
@@ -791,6 +691,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "The latest Hermes. Unlocked, highly steerable, and great for roleplay and agentic tasks.",
     publisher: "Nous Research",
     provider: "Nous Research",
+    quality: "Good",
     libraries: ["GGUF", "llama.cpp"],
     providers: ["Together AI"]
   },
@@ -816,6 +717,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "An uncensored, highly compliant model based on Mistral Small 3. Excellent for creative writing.",
     publisher: "Cognitive Computations",
     provider: "Cognitive Computations",
+    quality: "Very Good",
     libraries: ["GGUF", "llama.cpp"],
     providers: []
   },
@@ -843,6 +745,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "The fastest version of FLUX.1. State-of-the-art open image generation.",
     publisher: "Black Forest Labs",
     provider: "Black Forest Labs",
+    quality: "Exceptional",
     libraries: ["Diffusers", "ComfyUI"],
     providers: ["Replicate", "Fal.ai"]
   },
@@ -870,6 +773,7 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "An upgraded version of Yi. Strong performance in chat and coding benchmarks.",
     publisher: "01.AI",
     provider: "01.AI",
+    quality: "Excellent",
     libraries: ["GGUF", "llama.cpp"],
     providers: []
   },
@@ -895,109 +799,8 @@ export const MODEL_DB: LocalModelDB[] = [
     description: "A powerful multimodal model competing with commercial VLM offerings.",
     publisher: "OpenGVLab",
     provider: "OpenGVLab",
+    quality: "Very Good",
     libraries: ["Transformers", "LMDeploy"],
     providers: []
-  },
-
-  // --- Existing Models (Preserved) ---
-  {
-    name: "Llama-3.2-3B-Instruct-MLX",
-    repo: "mlx-community/Llama-3.2-3B-Instruct-4bit",
-    params_b: 3.2,
-    type: "LLM",
-    license: "Llama Community",
-    formats: ["Safetensors"],
-    backend: "mlx",
-    quantization: "4bit",
-    apple_silicon_optimized: true,
-    min_hardware: {
-      cpu: "Apple Silicon",
-      ram_gb: 8,
-      gpu_vram_gb: 3
-    },
-    tasks: ["chat", "qa", "creative"],
-    pinokio: false,
-    text_to_video_prompt: true,
-    text_to_image_prompt: true,
-    description: "Highly efficient Llama 3.2 3B model optimized for Apple Silicon via MLX. Blazing fast inference on M1/M2/M3.",
-    publisher: "Meta / MLX Community",
-    provider: "Meta",
-    libraries: ["MLX", "Safetensors", "Transformers"],
-    providers: ["Groq", "Together AI", "Fireworks"]
-  },
-  {
-    name: "DeepSeek-Coder-V2-Lite-MLX",
-    repo: "mlx-community/DeepSeek-Coder-V2-Lite-Instruct-4bit-mlx",
-    params_b: 16,
-    type: "MoE",
-    license: "DeepSeek License",
-    formats: ["Safetensors"],
-    backend: "mlx",
-    quantization: "4bit",
-    apple_silicon_optimized: true,
-    min_hardware: {
-      cpu: "Apple Silicon",
-      ram_gb: 16,
-      gpu_vram_gb: 10
-    },
-    tasks: ["coding", "chat", "reasoning"],
-    pinokio: false,
-    text_to_video_prompt: false,
-    text_to_image_prompt: false,
-    description: "State-of-the-art coding model (MoE) optimized for Mac. Rivals GPT-4 Turbo in coding tasks.",
-    publisher: "DeepSeek / MLX Community",
-    provider: "DeepSeek",
-    libraries: ["MLX", "Safetensors"],
-    providers: ["DeepSeek", "Together AI"]
-  },
-  {
-    name: "Phi-3.5-Mini-Instruct-MLX",
-    repo: "mlx-community/Phi-3.5-mini-instruct-4bit",
-    params_b: 3.8,
-    type: "LLM",
-    license: "MIT",
-    formats: ["Safetensors"],
-    backend: "mlx",
-    quantization: "4bit",
-    apple_silicon_optimized: true,
-    min_hardware: {
-      cpu: "Apple Silicon",
-      ram_gb: 8,
-      gpu_vram_gb: 4
-    },
-    tasks: ["chat", "qa", "reasoning"],
-    pinokio: false,
-    text_to_video_prompt: true,
-    text_to_image_prompt: true,
-    description: "Microsoft's Phi-3.5 Mini, perfectly optimized for Apple Silicon. Exceptional reasoning for its size.",
-    publisher: "Microsoft / MLX Community",
-    provider: "Microsoft",
-    libraries: ["MLX", "Transformers"],
-    providers: ["Azure AI", "HuggingFace"]
-  },
-  {
-    name: "Mistral-Nemo-12B-MLX",
-    repo: "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
-    params_b: 12,
-    type: "LLM",
-    license: "Apache 2.0",
-    formats: ["Safetensors"],
-    backend: "mlx",
-    quantization: "4bit",
-    apple_silicon_optimized: true,
-    min_hardware: {
-      cpu: "Apple Silicon",
-      ram_gb: 16,
-      gpu_vram_gb: 8
-    },
-    tasks: ["chat", "qa", "creative", "coding"],
-    pinokio: false,
-    text_to_video_prompt: true,
-    text_to_image_prompt: true,
-    description: "Mistral Nemo 12B running natively on MLX. Large context window and strong general general performance.",
-    publisher: "Mistral AI / MLX Community",
-    provider: "Mistral AI",
-    libraries: ["MLX", "Transformers"],
-    providers: ["Mistral AI", "Together AI", "Groq"]
   }
 ];

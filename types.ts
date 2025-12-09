@@ -150,6 +150,7 @@ export interface LocalModelDB {
   description: string;
   publisher: string;
   provider: string; // New field
+  quality?: 'Good' | 'Very Good' | 'Excellent' | 'Exceptional'; // Quality Rating
   libraries?: string[];
   providers?: string[]; // Cloud providers
 }
